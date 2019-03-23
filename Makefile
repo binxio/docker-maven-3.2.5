@@ -9,6 +9,7 @@ build: ## build image
 
 init: ## create gcp source repo
 	gcloud source repos create docker-maven-3.2.5 
+	git config --global credential.https://source.developers.google.com.helper gcloud.sh
 
 add-remote: ## add remote
 	git remote add origin $$(gcloud source repos describe docker-maven-3.2.5 --format="json" | jq -r '.url')
