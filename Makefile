@@ -5,7 +5,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 build: ## build image
-	docker build -t maven:3.2.5 .
+	docker build -t mvn:3.2.5 .
 
 init: ## create gcp source repo
 	gcloud source repos create docker-maven-3.2.5 
